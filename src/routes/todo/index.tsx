@@ -46,27 +46,26 @@ export default component$(() => {
   const arrSignal = useSignal(JSON.stringify([]));
   const firstSignal = useFirstJoke();
   arrSignal.value = JSON.stringify(firstSignal.value);
-console.log(arrSignal.value);
+//console.log(arrSignal.value);
   return (
-    <section>
+    <div class="container">
       <h3>Todos</h3>
-      <hr />
-      <label>title: <input bind:value={titleSignal} /></label>
-      <label>Content: <input bind:value={contentSignal} /></label>      
-      <hr />
+      <hr class="my-1" />
+      <label>Title: <input bind:value={titleSignal} /></label>
+      <label class="ms-2">Content: <input bind:value={contentSignal} /></label>      
       <button
         onClick$={async () => {
           const greeting = await serverGreeter(titleSignal.value, contentSignal.value);
           console.log(greeting);
           arrSignal.value = JSON.stringify(greeting);
+          alert("OK");
           location.reload();
         }}
-      >
-        Add
+      class="btn btn-primary ms-2">Create
       </button>
-      <hr />
+      <hr class="my-1" />
       <QList client:only items={arrSignal.value} />
-    </section>
+    </div>
   );
 });
 //

@@ -15,7 +15,6 @@ export default component$(() => {
       <span><a href="/server/server1/">[ server1 ]</a></span>
       <span><a href="/server/server2/">[ server2 ]</a></span>
       <span><a href="/routing/route1/11">[ route1 ]</a></span>
-      <span><a href="/todolist/">[ Todolist ]</a></span>
       <br />
       <span><a href="/todo/">[ todo]</a></span>
       <hr />
