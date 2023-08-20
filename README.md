@@ -6,12 +6,17 @@
 
  date    : 2023/08/20  
 
- update  :  
+ update  : 2023/08/20 
 
 ***
 ### Summary
 
 Qwik + React + Cloudflare D1, todo Sample
+
+***
+### API Server
+
+https://github.com/kuc-arc-f/d1-project8git
 
 ***
 ### Setup
