@@ -51,8 +51,12 @@ export default component$(() => {
     <div class="container">
       <h3>Todos</h3>
       <hr class="my-1" />
-      <label>Title: <input bind:value={titleSignal} /></label>
-      <label class="ms-2">Content: <input bind:value={contentSignal} /></label>      
+      <label>Title: <input bind:value={titleSignal} class="form-control" /></label>
+      <label class="ms-2">Content: 
+      <textarea id="content" name="content"  class="form-control" rows={3}  bind:value={contentSignal}
+        placeholder="" ></textarea>
+      </label> 
+      {/* <input bind:value={contentSignal} /> */}     
       <button
         onClick$={async () => {
           const greeting = await serverGreeter(titleSignal.value, contentSignal.value);

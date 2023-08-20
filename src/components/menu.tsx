@@ -7,7 +7,7 @@ import { component$ } from "@builder.io/qwik";
 export default component$(() => {
 
   return (
-    <div>
+    <div class="px-2 py-2">
       <span><a href="/">[ home ]</a></span>
       <span><a href="/test">[ test ]</a></span>
       <span><a href="/test2">[ test2 ]</a></span>
@@ -17,7 +17,7 @@ export default component$(() => {
       <span><a href="/routing/route1/11">[ route1 ]</a></span>
       <br />
       <span><a href="/todo/">[ todo]</a></span>
-      <hr />
+      <hr class="my-1" />
     </div>
   );
 });

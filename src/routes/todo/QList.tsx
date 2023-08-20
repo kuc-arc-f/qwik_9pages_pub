@@ -16,6 +16,7 @@ console.log(items);
                 <h3>{item.title}</h3>
                 <span>ID: {item.id}, {item.createdAt}</span>
                 <a href={`/todo/${item.id}`} className="btn btn-sm btn-outline-primary ms-2">Show</a>
+                <a href={`/todo/edit/${item.id}`} className="btn btn-sm btn-outline-primary ms-2">Edit</a>
                 <hr />
             </div>
           )
