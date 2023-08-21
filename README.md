@@ -1,4 +1,4 @@
-﻿# qwik_8react_pub
+﻿# qwik_9pages_pub
 
  Version: 0.9.1
 
@@ -6,7 +6,7 @@
 
  date    : 2023/08/20  
 
- update  : 2023/08/20
+ update  : 2023/08/21
 
 ***
 ### Summary
@@ -29,4 +29,8 @@ PUBLIC_API_URL=https://hoge
 PUBLIC_API_KEY="123"
 ```
 ***
+### blog
 
+https://zenn.dev/knaka0209/articles/df23b4bd025e1e
+
+***
