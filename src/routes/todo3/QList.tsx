@@ -1,14 +1,19 @@
 /** @jsxImportSource react */
 import { qwikify$ } from '@builder.io/qwik-react';
 import HttpCommon from '../lib/HttpCommon';
-
-let items = [];
+import {useState, useEffect}  from 'react';
+import CrudIndex from './CrudIndex';
 
 //
-function List(props: any) {
-//console.log(props.items);
-    items = JSON.parse(props.items);
-console.log(items);
+function List() {
+    const [todoItems, setTodoItems] = useState<any[]>([]);
+    useEffect(() => {
+        (async () => {
+            const d = await CrudIndex.fetchItems()
+            setTodoItems(d);
+        })()
+
+    }, []);
     /**
      *
      * @param
@@ -22,20 +27,45 @@ console.log(items);
             }
             const json = await HttpCommon.send_post(postItem, "/todos/delete");
 console.log(json);
-            alert("OK, Delete");
             window.location.reload();
         } catch (e) {
             console.error(e);
         }      
     }
+    /**
+     *
+     * @param
+     *
+     * @return
+     */    
+    const addTodo = async function () {
+        try{
+            const result = await CrudIndex.addItem();
+            if(result) {
+                window.location.reload();
+            }
+        } catch (e) {
+            console.error(e);
+        }      
+    }
+    //
     return (
-      <div>
+    <div>
+        <h3>Todos</h3>
+        <hr />
         {/* Test */}
-        <div className="text-end">
+        <div className="text-center">
+            <label>Title: <input id="title" className="form-control" /></label>
+            <label className="ms-2">Content: 
+                <textarea id="content" name="content"  className="form-control" rows={3}
+                placeholder="" ></textarea>
+            </label>
+            <button className="btn btn-primary ms-2" onClick={()=>addTodo()}>Create
+            </button>                        
         </div>
         <hr />
         {/* Hello from React */}
-        {items.map((item: any ,index: number) => {
+        {todoItems.map((item: any ,index: number) => {
         return (
         <div key={index}>
             <h3>{item.title}</h3>
@@ -49,7 +79,7 @@ console.log(json);
         )
         })}
 
-      </div>
+    </div>
     );
 }
 //

@@ -17,7 +17,7 @@ export default component$(() => {
       <span><a href="/routing/route1/11">[ route1 ]</a></span>
       <br />
       <span><a href="/todo/">[ todo]</a></span>
-      <span><a href="/todo2/">[ todo2]</a></span>
+      <span><a href="/todo3/">[ todo3]</a></span>
       <hr class="my-1" />
     </div>
   );
